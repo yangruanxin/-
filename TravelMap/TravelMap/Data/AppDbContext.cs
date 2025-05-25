@@ -7,8 +7,7 @@ namespace TravelMap.Data
     {
         // 数据库表映射到类
         public DbSet<User> Users { get; set; } 
-        public DbSet<Place> Places { get; set; }
-        public DbSet<UserPlace> UserPlaces { get; set; }
+        public DbSet<CheckIn> CheckIns { get; set; }
         //构造函数
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options){}
     }

@@ -1,62 +1,93 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using TravelMap.Data;
 using TravelMap.Models;
-using TravelMap.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;  
 
 namespace TravelMap.Controllers
 {
+    // Controllers/CheckInController.cs
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize] // 需要认证
-    public class CheckinController : ControllerBase
+    public class CheckInController : ControllerBase
     {
-        private readonly ICheckinService _checkinService;
-        private readonly ILogger<CheckinController> _logger;
+        private readonly AppDbContext _context;
 
-        public CheckinController(ICheckinService checkinService, ILogger<CheckinController> logger)
+        public CheckInController(AppDbContext context)
         {
-            _checkinService = checkinService;
-            _logger = logger;
+            _context = context;
         }
 
-        [HttpPost("checkin")]
-        public async Task<IActionResult> Checkin([FromBody] CheckinRequest request)
+        // 获取单个打卡记录
+        [HttpGet("{id}")]
+        public async Task<ActionResult<CheckIn>> GetCheckIn(int id)
         {
-            try
-            {
-                // 从JWT token中获取用户ID
-                var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-                if (string.IsNullOrEmpty(userId))
-                {
-                    return Unauthorized(new { success = false, message = "无效的用户凭证" });
-                }
+            var checkIn = await _context.CheckIns.FindAsync(id);
 
-                // 调用打卡服务
-                var result = await _checkinService.CheckinAsync(userId, request);
+            if (checkIn == null)
+            {
+                return NotFound();
+            }
 
-                return Ok(new CheckinResponse
-                {
-                    Success = true,
-                    Message = "打卡成功",
-                    Data = result
-                });
-            }
-            catch (ArgumentException ex)
-            {
-                _logger.LogWarning(ex, "参数验证失败");
-                return BadRequest(new { success = false, message = ex.Message });
-            }
-            catch (KeyNotFoundException ex)
-            {
-                _logger.LogWarning(ex, "地点未找到");
-                return NotFound(new { success = false, message = ex.Message });
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "打卡过程中发生错误");
-                return StatusCode(500, new { success = false, message = "服务器内部错误" });
-            }
+            return checkIn;
         }
+        // 获取用户的所有打卡记录
+        [HttpGet("user/{userId}")]
+        public async Task<ActionResult<IEnumerable<CheckIn>>> GetUserCheckIns(string userId)
+        {
+            return await _context.CheckIns.Where(c => c.UserId == userId).ToListAsync();
+        }
+
+        // 创建新的打卡记录
+        [HttpPost]
+        public async Task<ActionResult<CheckIn>> CreateCheckIn([FromBody] CheckInDto checkInDto)
+        {
+            var checkIn = new CheckIn
+            {
+                UserId = checkInDto.UserId,
+                LocationId = checkInDto.LocationId,
+                CheckInTime = DateTime.Now,
+                Note = checkInDto.Note,
+                PhotoUrl = checkInDto.PhotoUrl
+            };
+
+            _context.CheckIns.Add(checkIn);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetCheckIn), new { id = checkIn.Id }, checkIn);
+        }
+
+        // 上传打卡照片
+        [HttpPost("upload-photo")]
+        public async Task<IActionResult> UploadPhoto(IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+                return BadRequest("No file uploaded");
+
+            var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
+            if (!Directory.Exists(uploadsFolder))
+                Directory.CreateDirectory(uploadsFolder);
+
+            var uniqueFileName = Guid.NewGuid().ToString() + "_" + file.FileName;
+            var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await file.CopyToAsync(stream);
+            }
+
+            var photoUrl = $"/uploads/{uniqueFileName}";
+            return Ok(new { photoUrl });
+        }
+    }
+
+    // CheckInDto.cs
+    public class CheckInDto
+    {
+        public string UserId { get; set; }
+        public int LocationId { get; set; }
+        public string Note { get; set; }
+        public string PhotoUrl { get; set; }
     }
 }

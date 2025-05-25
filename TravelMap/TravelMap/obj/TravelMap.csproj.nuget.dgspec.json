@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HUAWEI\\source\\repos\\TravelMap\\TravelMap\\TravelMap.csproj": {}
+    "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\TravelMap.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HUAWEI\\source\\repos\\TravelMap\\TravelMap\\TravelMap.csproj": {
+    "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\TravelMap.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HUAWEI\\source\\repos\\TravelMap\\TravelMap\\TravelMap.csproj",
+        "projectUniqueName": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\TravelMap.csproj",
         "projectName": "TravelMap",
-        "projectPath": "C:\\Users\\HUAWEI\\source\\repos\\TravelMap\\TravelMap\\TravelMap.csproj",
+        "projectPath": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\TravelMap.csproj",
         "packagesPath": "C:\\Users\\HUAWEI\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HUAWEI\\source\\repos\\TravelMap\\TravelMap\\obj\\",
+        "outputPath": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
