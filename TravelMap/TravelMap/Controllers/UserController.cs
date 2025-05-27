@@ -8,6 +8,7 @@ using System.Text;
 using TravelMap.Data;
 using TravelMap.Models;
 using BCrypt.Net;
+using TravelMap.DTO;
 
 
 namespace TravelMap.Controllers
@@ -27,43 +28,59 @@ namespace TravelMap.Controllers
 
         // 注册接口
         [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] User userDto)
+        public async Task<IActionResult> Register([FromBody] RegisterDto dto)
         {
-            if (await _context.Users.AnyAsync(u => u.Username == userDto.Username))
-                return BadRequest("用户名已存在");
+            var existUser = await _context.Users.AnyAsync(u => u.Username == dto.Username);
+            if (existUser)
+            {
+                return Ok(new { code = 1, message = "用户名已存在", data = (string)null });
+            }
 
-            var hashedPassword = BCrypt.Net.BCrypt.HashPassword(userDto.Password);
+            // 密码哈希（可选加盐）
+            var hashedPassword = BCrypt.Net.BCrypt.HashPassword(dto.Password);
+
             var user = new User
             {
-                Username = userDto.Username,
+                Username = dto.Username,
                 Password = hashedPassword
             };
 
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
-            return Ok("注册成功");
+
+            return Ok(new { code = 0, message = "注册成功", data = (string)null });
         }
+
 
         // 登录接口
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] User loginDto)
+        public async Task<IActionResult> Login([FromBody] LoginDto dto)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == loginDto.Username);
-            if (user == null || !BCrypt.Net.BCrypt.Verify(loginDto.Password, user.Password))
-                return Unauthorized("用户名或密码错误");
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == dto.Username);
+            if (user == null || !BCrypt.Net.BCrypt.Verify(dto.Password, user.Password))
+            {
+                return Ok(new { code = 1, message = "用户名或密码错误", data = (object)null });
+            }
 
+            // 生成 JWT
             var token = GenerateJwtToken(user);
-            return Ok(new { token, username = user.Username });
+
+            return Ok(new
+            {
+                code = 200,
+                message = "登录成功",
+                data = new { token }
+            });
         }
+
 
         // 生成 JWT 方法
         private string GenerateJwtToken(User user)
         {
             var claims = new[]
             {
-                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                new Claim(ClaimTypes.Name, user.Username)
-            };
+        new Claim(ClaimTypes.Name, user.Username)
+    };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
