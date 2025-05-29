@@ -18,12 +18,12 @@
         <div class="stats">
           <!-- 旅行过多少地方 -->
           <div>
-            <strong>{{user.places}}</strong>
+            <strong>{{totalPlaces}}</strong>
             <p>places</p>
           </div>
           <!-- 累计打卡次数 -->
           <div>
-            <strong>{{ user.times }}</strong>
+            <strong>{{ totalTimes }}</strong>
             <p>times</p>
           </div>
         </div>
@@ -247,6 +247,17 @@
   import { ArrowUp, ArrowDown ,Plus} from '@element-plus/icons-vue'
   import { Motion } from "motion-v";
   import draggable from "vuedraggable";
+
+  import { computed } from 'vue'
+
+  // 计算位置数和次数
+  const totalPlaces = computed(() => {
+    const uniquePlaces = new Set(posts.value.map(post => post.locationName))
+    return uniquePlaces.size
+  })
+
+  const totalTimes = computed(() => posts.value.length)
+
 
 
 

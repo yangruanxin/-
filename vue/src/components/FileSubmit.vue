@@ -43,6 +43,8 @@
             拖动 ☰ 可为图片排序
             <br>
             点击图片查看大图
+            <br>
+            点击 x 删除图片
           </p>
 
           <div
@@ -80,12 +82,20 @@
                       fit="cover"
                       @click.stop
                     />
+
+                    <!-- 删除按钮 -->
+                    <el-icon
+                      class="absolute -top-2 -right-2 z-50 rounded-full bg-white bg-opacity-50 p-1 text-white hover:bg-red-600 cursor-pointer"
+                      @click.stop="removeFile(idx)"
+                    >
+                      <Close />
+                    </el-icon>
                   </Motion>
                   <Motion
                     as="p"
                     :initial="{ opacity: 0 }"
                     :animate="{ opacity: 1 }"
-                    class="flex-1 max-w-xs truncate text-base text-neutral-700 dark:text-neutral-300"
+                    class="flex-1 max-w-[8rem] break-words text-base text-neutral-700 dark:text-neutral-300"
                   >
                     {{ file.name }}
                   </Motion>
@@ -177,6 +187,7 @@ import { onBeforeUnmount } from "vue";
 import { ElImage } from 'element-plus';
 import { defineEmits } from 'vue'
 import draggable from "vuedraggable";
+import { Close } from '@element-plus/icons-vue'
 
 
 const { URL } = window;
