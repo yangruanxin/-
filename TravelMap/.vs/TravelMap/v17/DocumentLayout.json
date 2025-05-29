@@ -3,72 +3,67 @@
   "WorkspaceRootPath": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|c:\\users\\huawei\\desktop\\travelmap\\travelmap\\travelmap\\controllers\\travelpostscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|solutionrelative:travelmap\\controllers\\travelpostscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|c:\\users\\huawei\\desktop\\travelmap\\travelmap\\travelmap\\services\\travelpostservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|solutionrelative:travelmap\\services\\travelpostservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|c:\\users\\huawei\\desktop\\travelmap\\travelmap\\travelmap\\models\\travelpost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|solutionrelative:travelmap\\models\\travelpost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|c:\\users\\huawei\\desktop\\travelmap\\travelmap\\travelmap\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|solutionrelative:travelmap\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|c:\\users\\huawei\\desktop\\travelmap\\travelmap\\travelmap\\dto\\travelpostrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|solutionrelative:travelmap\\dto\\travelpostrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|c:\\users\\huawei\\desktop\\travelmap\\travelmap\\travelmap\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|solutionrelative:travelmap\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|c:\\users\\huawei\\desktop\\travelmap\\travelmap\\travelmap\\services\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|solutionrelative:travelmap\\services\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|c:\\users\\huawei\\desktop\\travelmap\\travelmap\\travelmap\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|solutionrelative:travelmap\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|c:\\users\\huawei\\desktop\\travelmap\\travelmap\\travelmap\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|solutionrelative:travelmap\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|c:\\users\\huawei\\desktop\\travelmap\\travelmap\\travelmap\\services\\interfaces\\itravelpostservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|solutionrelative:travelmap\\services\\interfaces\\itravelpostservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|c:\\users\\huawei\\desktop\\travelmap\\travelmap\\travelmap\\controllers\\travelpostscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|solutionrelative:travelmap\\controllers\\travelpostscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|c:\\users\\huawei\\desktop\\travelmap\\travelmap\\travelmap\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|solutionrelative:travelmap\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|c:\\users\\huawei\\desktop\\travelmap\\travelmap\\travelmap\\dto\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|solutionrelative:travelmap\\dto\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|c:\\users\\huawei\\desktop\\travelmap\\travelmap\\travelmap\\dto\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|solutionrelative:travelmap\\dto\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|c:\\users\\huawei\\desktop\\travelmap\\travelmap\\travelmap\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|solutionrelative:travelmap\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|c:\\users\\huawei\\desktop\\travelmap\\travelmap\\travelmap\\migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|solutionrelative:travelmap\\migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|c:\\users\\huawei\\desktop\\travelmap\\travelmap\\travelmap\\models\\travelpost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|solutionrelative:travelmap\\models\\travelpost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|c:\\users\\huawei\\desktop\\travelmap\\travelmap\\travelmap\\dto\\travelpostcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|solutionrelative:travelmap\\dto\\travelpostcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|c:\\users\\huawei\\desktop\\travelmap\\travelmap\\travelmap\\dto\\travelpostresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|solutionrelative:travelmap\\dto\\travelpostresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\obj\\Debug\\net8.0\\TravelMap.AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TravelMap\\obj\\Debug\\net8.0\\TravelMap.AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|c:\\users\\huawei\\desktop\\travelmap\\travelmap\\travelmap\\dto\\apiresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|solutionrelative:travelmap\\dto\\apiresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|c:\\users\\huawei\\desktop\\travelmap\\travelmap\\travelmap\\controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|solutionrelative:travelmap\\controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|c:\\users\\huawei\\desktop\\travelmap\\travelmap\\travelmap\\dto\\loginresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|solutionrelative:travelmap\\dto\\loginresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|c:\\users\\huawei\\desktop\\travelmap\\travelmap\\travelmap\\properties\\resources.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|solutionrelative:travelmap\\properties\\resources.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|c:\\users\\huawei\\desktop\\travelmap\\travelmap\\travelmap\\travelmap.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|solutionrelative:travelmap\\travelmap.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|c:\\users\\huawei\\desktop\\travelmap\\travelmap\\travelmap\\migrations\\20250516082719_initialcreate.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|solutionrelative:travelmap\\migrations\\20250516082719_initialcreate.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|c:\\users\\huawei\\desktop\\travelmap\\travelmap\\travelmap\\migrations\\20250516082719_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|solutionrelative:travelmap\\migrations\\20250516082719_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|c:\\users\\huawei\\desktop\\travelmap\\travelmap\\travelmap\\migrations\\20250523063729_addplaceanduserplacetables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FBAA538-6BB3-4803-8419-51C15E4693BC}|TravelMap\\TravelMap.csproj|solutionrelative:travelmap\\migrations\\20250523063729_addplaceanduserplacetables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -78,7 +73,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -86,167 +81,113 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "LoginDto.cs",
-              "DocumentMoniker": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\DTO\\LoginDto.cs",
-              "RelativeDocumentMoniker": "TravelMap\\DTO\\LoginDto.cs",
-              "ToolTip": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\DTO\\LoginDto.cs",
-              "RelativeToolTip": "TravelMap\\DTO\\LoginDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T02:27:32.012Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "RegisterDto.cs",
-              "DocumentMoniker": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\DTO\\RegisterDto.cs",
-              "RelativeDocumentMoniker": "TravelMap\\DTO\\RegisterDto.cs",
-              "ToolTip": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\DTO\\RegisterDto.cs",
-              "RelativeToolTip": "TravelMap\\DTO\\RegisterDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T02:26:42.239Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "TravelPost.cs",
-              "DocumentMoniker": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Models\\TravelPost.cs",
-              "RelativeDocumentMoniker": "TravelMap\\Models\\TravelPost.cs",
-              "ToolTip": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Models\\TravelPost.cs",
-              "RelativeToolTip": "TravelMap\\Models\\TravelPost.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T02:15:42.215Z",
+              "Title": "Microsoft.Common.CurrentVersion.targets",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ViewState": "AgIAAL0UAAAAAAAAAAASwMgUAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-05-29T11:27:51.886Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "TravelPostCreateDto.cs",
-              "DocumentMoniker": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\DTO\\TravelPostCreateDto.cs",
-              "RelativeDocumentMoniker": "TravelMap\\DTO\\TravelPostCreateDto.cs",
-              "ToolTip": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\DTO\\TravelPostCreateDto.cs",
-              "RelativeToolTip": "TravelMap\\DTO\\TravelPostCreateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "TravelMap\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "TravelMap\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAAAwAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T02:15:02.776Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-29T07:59:01.349Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "TravelPostService.cs",
+              "DocumentMoniker": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Services\\TravelPostService.cs",
+              "RelativeDocumentMoniker": "TravelMap\\Services\\TravelPostService.cs",
+              "ToolTip": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Services\\TravelPostService.cs",
+              "RelativeToolTip": "TravelMap\\Services\\TravelPostService.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAvwDAAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T07:52:46.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ITravelPostService.cs",
+              "DocumentMoniker": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Services\\Interfaces\\ITravelPostService.cs",
+              "RelativeDocumentMoniker": "TravelMap\\Services\\Interfaces\\ITravelPostService.cs",
+              "ToolTip": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Services\\Interfaces\\ITravelPostService.cs",
+              "RelativeToolTip": "TravelMap\\Services\\Interfaces\\ITravelPostService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T07:51:51.637Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "TravelPostResponseDto.cs",
+              "DocumentMoniker": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\DTO\\TravelPostResponseDto.cs",
+              "RelativeDocumentMoniker": "TravelMap\\DTO\\TravelPostResponseDto.cs",
+              "ToolTip": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\DTO\\TravelPostResponseDto.cs",
+              "RelativeToolTip": "TravelMap\\DTO\\TravelPostResponseDto.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAABEAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T07:50:37.508Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "TravelPostsController.cs",
               "DocumentMoniker": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Controllers\\TravelPostsController.cs",
               "RelativeDocumentMoniker": "TravelMap\\Controllers\\TravelPostsController.cs",
               "ToolTip": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Controllers\\TravelPostsController.cs",
               "RelativeToolTip": "TravelMap\\Controllers\\TravelPostsController.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAADgAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAB4AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T02:12:16.074Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "TravelMap.csproj",
-              "DocumentMoniker": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\TravelMap.csproj",
-              "RelativeDocumentMoniker": "TravelMap\\TravelMap.csproj",
-              "ToolTip": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\TravelMap.csproj",
-              "RelativeToolTip": "TravelMap\\TravelMap.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-05-23T06:33:52.188Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Resources.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Properties\\Resources.Designer.cs",
-              "RelativeDocumentMoniker": "TravelMap\\Properties\\Resources.Designer.cs",
-              "ToolTip": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Properties\\Resources.Designer.cs",
-              "RelativeToolTip": "TravelMap\\Properties\\Resources.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T06:36:05.858Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "TestController.cs",
-              "DocumentMoniker": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Controllers\\TestController.cs",
-              "RelativeDocumentMoniker": "TravelMap\\Controllers\\TestController.cs",
-              "ToolTip": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Controllers\\TestController.cs",
-              "RelativeToolTip": "TravelMap\\Controllers\\TestController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T06:06:43.864Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AppDbContextModelSnapshot.cs",
-              "DocumentMoniker": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Migrations\\AppDbContextModelSnapshot.cs",
-              "RelativeDocumentMoniker": "TravelMap\\Migrations\\AppDbContextModelSnapshot.cs",
-              "ToolTip": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Migrations\\AppDbContextModelSnapshot.cs",
-              "RelativeToolTip": "TravelMap\\Migrations\\AppDbContextModelSnapshot.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-21T15:05:07.276Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "20250516082719_InitialCreate.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Migrations\\20250516082719_InitialCreate.Designer.cs",
-              "RelativeDocumentMoniker": "TravelMap\\Migrations\\20250516082719_InitialCreate.Designer.cs",
-              "ToolTip": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Migrations\\20250516082719_InitialCreate.Designer.cs",
-              "RelativeToolTip": "TravelMap\\Migrations\\20250516082719_InitialCreate.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-21T15:04:56.894Z"
+              "WhenOpened": "2025-05-28T08:05:35.755Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "TravelMap\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Controllers\\UserController.cs",
-              "RelativeToolTip": "TravelMap\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAUAAAAAAAAAA==",
+              "Title": "TravelPostRequestDto.cs",
+              "DocumentMoniker": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\DTO\\TravelPostRequestDto.cs",
+              "RelativeDocumentMoniker": "TravelMap\\DTO\\TravelPostRequestDto.cs",
+              "ToolTip": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\DTO\\TravelPostRequestDto.cs",
+              "RelativeToolTip": "TravelMap\\DTO\\TravelPostRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-21T14:41:25.11Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-28T08:05:19.135Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "20250516082719_InitialCreate.cs",
-              "DocumentMoniker": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Migrations\\20250516082719_InitialCreate.cs",
-              "RelativeDocumentMoniker": "TravelMap\\Migrations\\20250516082719_InitialCreate.cs",
-              "ToolTip": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Migrations\\20250516082719_InitialCreate.cs",
-              "RelativeToolTip": "TravelMap\\Migrations\\20250516082719_InitialCreate.cs",
+              "DocumentIndex": 9,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Models\\User.cs",
+              "RelativeDocumentMoniker": "TravelMap\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Models\\User.cs",
+              "RelativeToolTip": "TravelMap\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T07:33:34.048Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "20250523063729_AddPlaceAndUserPlaceTables.cs",
+              "DocumentMoniker": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Migrations\\20250523063729_AddPlaceAndUserPlaceTables.cs",
+              "RelativeDocumentMoniker": "TravelMap\\Migrations\\20250523063729_AddPlaceAndUserPlaceTables.cs",
+              "ToolTip": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Migrations\\20250523063729_AddPlaceAndUserPlaceTables.cs",
+              "RelativeToolTip": "TravelMap\\Migrations\\20250523063729_AddPlaceAndUserPlaceTables.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-16T08:27:19.44Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "TravelMap.AssemblyInfo.cs",
-              "DocumentMoniker": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\obj\\Debug\\net8.0\\TravelMap.AssemblyInfo.cs",
-              "RelativeDocumentMoniker": "TravelMap\\obj\\Debug\\net8.0\\TravelMap.AssemblyInfo.cs",
-              "ToolTip": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\obj\\Debug\\net8.0\\TravelMap.AssemblyInfo.cs",
-              "RelativeToolTip": "TravelMap\\obj\\Debug\\net8.0\\TravelMap.AssemblyInfo.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAuwBcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-16T08:19:54.161Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-28T07:23:21.33Z"
             },
             {
               "$type": "Document",
@@ -256,49 +197,81 @@
               "RelativeDocumentMoniker": "TravelMap\\Program.cs",
               "ToolTip": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Program.cs",
               "RelativeToolTip": "TravelMap\\Program.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAAB0AAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAQwCMAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-16T07:52:22.938Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\appsettings.json",
-              "RelativeDocumentMoniker": "TravelMap\\appsettings.json",
-              "ToolTip": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\appsettings.json",
-              "RelativeToolTip": "TravelMap\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-16T07:50:59.423Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-28T06:39:00.568Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Models\\User.cs",
-              "RelativeDocumentMoniker": "TravelMap\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Models\\User.cs",
-              "RelativeToolTip": "TravelMap\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAWAAAAAAAAAA==",
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Services\\Interfaces\\IAuthService.cs",
+              "RelativeDocumentMoniker": "TravelMap\\Services\\Interfaces\\IAuthService.cs",
+              "ToolTip": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Services\\Interfaces\\IAuthService.cs",
+              "RelativeToolTip": "TravelMap\\Services\\Interfaces\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-16T07:47:11.52Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-28T06:37:42.377Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "TravelMap\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "TravelMap\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAA6AAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "TravelMap\\Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Services\\AuthService.cs",
+              "RelativeToolTip": "TravelMap\\Services\\AuthService.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAAAEMAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-16T07:44:20.82Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-28T06:36:21.954Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ApiResponseDto.cs",
+              "DocumentMoniker": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\DTO\\ApiResponseDto.cs",
+              "RelativeDocumentMoniker": "TravelMap\\DTO\\ApiResponseDto.cs",
+              "ToolTip": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\DTO\\ApiResponseDto.cs",
+              "RelativeToolTip": "TravelMap\\DTO\\ApiResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T06:34:30.001Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "LoginResponseDto.cs",
+              "DocumentMoniker": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\DTO\\LoginResponseDto.cs",
+              "RelativeDocumentMoniker": "TravelMap\\DTO\\LoginResponseDto.cs",
+              "ToolTip": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\DTO\\LoginResponseDto.cs",
+              "RelativeToolTip": "TravelMap\\DTO\\LoginResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T06:33:48.769Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TravelPost.cs",
+              "DocumentMoniker": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Models\\TravelPost.cs",
+              "RelativeDocumentMoniker": "TravelMap\\Models\\TravelPost.cs",
+              "ToolTip": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Models\\TravelPost.cs",
+              "RelativeToolTip": "TravelMap\\Models\\TravelPost.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T16:04:30.086Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "TravelMap\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\Controllers\\UserController.cs",
+              "RelativeToolTip": "TravelMap\\Controllers\\UserController.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAAADUAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T16:04:02.064Z"
             }
           ]
         }

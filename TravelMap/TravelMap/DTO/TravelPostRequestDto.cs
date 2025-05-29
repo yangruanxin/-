@@ -2,10 +2,10 @@
 
 namespace TravelMap.DTO
 {
-    public class TravelPostCreateDto
+    public class TravelPostRequest
     {
-        [Required]
-        public string Title { get; set; }
+        
+        //public string Title { get; set; }
 
         [Required]
         public string Content { get; set; }
@@ -25,9 +25,10 @@ namespace TravelMap.DTO
         [Required]
         public string EndTime { get; set; }
 
+        [Required]
         public List<IFormFile> Images { get; set; }
 
+        [Required]
         public List<string> Orders { get; set; }
     }
-
 }

@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "Bv/8acaZUI/SFzUalG+42qhK+Ca2oX5nK3VaZ+IvuxQ=",
+  "Hash": "hMHH1T06EKkXvlMEO/rWEdbUOCrVUAWiM5X8owi/frM=",
   "Source": "TravelMap",
   "BasePath": "_content/TravelMap",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "TravelMap\\wwwroot",
+      "Source": "TravelMap",
+      "ContentRoot": "C:\\Users\\HUAWEI\\Desktop\\TravelMap\\TravelMap\\TravelMap\\wwwroot\\",
+      "BasePath": "_content/TravelMap",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }

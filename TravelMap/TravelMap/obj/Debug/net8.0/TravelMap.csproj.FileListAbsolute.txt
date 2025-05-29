@@ -303,3 +303,4 @@ C:\Users\HUAWEI\Desktop\TravelMap\TravelMap\TravelMap\obj\Debug\net8.0\scopedcss
 C:\Users\HUAWEI\Desktop\TravelMap\TravelMap\TravelMap\obj\Debug\net8.0\TravelMap.csproj.Up2Date
 C:\Users\HUAWEI\Desktop\TravelMap\TravelMap\TravelMap\obj\Debug\net8.0\TravelMap.genruntimeconfig.cache
 C:\Users\HUAWEI\Desktop\TravelMap\TravelMap\TravelMap\obj\Debug\net8.0\ref\TravelMap.dll
+C:\Users\HUAWEI\Desktop\TravelMap\TravelMap\TravelMap\bin\Debug\net8.0\TravelMap.staticwebassets.runtime.json

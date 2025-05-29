@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\TravelMap",
+    "\\TravelMap\\TravelMap",
+    "\\TravelMap\\TravelMap\\Data",
+    "\\TravelMap\\TravelMap\\Models",
+    "\\vue",
+    "\\vue\\src",
+    "\\vue\\src\\utils",
+    "\\vue\\src\\views",
+    "\\vue\\src\\views\\Auth"
+  ],
+  "SelectedNode": "\\TravelMap\\TravelMap\\Models\\TravelPost.cs",
+  "PreviewInSolutionExplorer": false
+}

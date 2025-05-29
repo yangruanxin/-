@@ -8,16 +8,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.Reflection;
+//using System;
+//using System.Reflection;
 
-/*[assembly: System.Reflection.AssemblyCompanyAttribute("TravelMap")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a3b4f7978e64826482dd1204489c45f82214d35d")]
-[assembly: System.Reflection.AssemblyProductAttribute("TravelMap")]
-[assembly: System.Reflection.AssemblyTitleAttribute("TravelMap")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]*/
+//[assembly: System.Reflection.AssemblyCompanyAttribute("TravelMap")]
+//[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+//[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+//[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+215189bf5a0f207e5bac7c27ab5d150e8bc150fa")]
+//[assembly: System.Reflection.AssemblyProductAttribute("TravelMap")]
+//[assembly: System.Reflection.AssemblyTitleAttribute("TravelMap")]
+//[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // 由 MSBuild WriteCodeFragment 类生成。
 

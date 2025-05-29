@@ -9,6 +9,8 @@ using TravelMap.Data;
 using TravelMap.Models;
 using BCrypt.Net;
 using TravelMap.DTO;
+using TravelMap.Services.Interfaces;
+using TravelMap.Services;
 
 
 namespace TravelMap.Controllers
@@ -19,81 +21,49 @@ namespace TravelMap.Controllers
     {
         private readonly AppDbContext _context;
         private readonly IConfiguration _config;
+        private readonly ILogger<UserController> _logger;
+        private readonly IAuthService _authService; 
 
-        public UserController(AppDbContext context, IConfiguration config)
+        public UserController(AppDbContext context, IConfiguration config, ILogger<UserController> logger, IAuthService authService)
         {
             _context = context;
             _config = config;
+            _logger = logger;
+            _authService = authService;
         }
 
-        // 注册接口
         [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] RegisterDto dto)
+        public async Task<ApiResponseDto<string>> Register([FromBody] RegisterDto request)
         {
-            var existUser = await _context.Users.AnyAsync(u => u.Username == dto.Username);
-            if (existUser)
+            // 调用 AuthService 注册用户
+            var (success, message) = await _authService.Register(request.Username, request.Password);
+            // 返回统一响应格式
+            return new ApiResponseDto<string>
             {
-                return Ok(new { code = 1, message = "用户名已存在", data = (string)null });
-            }
-
-            // 密码哈希（可选加盐）
-            var hashedPassword = BCrypt.Net.BCrypt.HashPassword(dto.Password);
-
-            var user = new User
-            {
-                Username = dto.Username,
-                Password = hashedPassword
+                Code = success ? 200 : 400,
+                Message = message,
+                Data = success ? null : message
             };
-
-            _context.Users.Add(user);
-            await _context.SaveChangesAsync();
-
-            return Ok(new { code = 0, message = "注册成功", data = (string)null });
         }
 
-
-        // 登录接口
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] LoginDto dto)
+        public async Task<ApiResponseDto<LoginResponseDto>> Login([FromBody] LoginDto request)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == dto.Username);
-            if (user == null || !BCrypt.Net.BCrypt.Verify(dto.Password, user.Password))
+            // 调用 AuthService 验证用户
+            var (success, token) = await _authService.Login(request.Username, request.Password);
+            // 返回统一响应格式
+            return new ApiResponseDto<LoginResponseDto>
             {
-                return Ok(new { code = 1, message = "用户名或密码错误", data = (object)null });
-            }
-
-            // 生成 JWT
-            var token = GenerateJwtToken(user);
-
-            return Ok(new
-            {
-                code = 200,
-                message = "登录成功",
-                data = new { token }
-            });
+                Code = success ? 200 : 400,
+                Message = success ? "登录成功" : "用户名或密码错误",
+                Data = success ? new LoginResponseDto { Token = token } : null
+            };
         }
 
+        
+        
 
-        // 生成 JWT 方法
-        private string GenerateJwtToken(User user)
-        {
-            var claims = new[]
-            {
-        new Claim(ClaimTypes.Name, user.Username)
-    };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
-            var token = new JwtSecurityToken(
-                issuer: _config["Jwt:Issuer"],
-                audience: _config["Jwt:Audience"],
-                claims: claims,
-                expires: DateTime.Now.AddMinutes(int.Parse(_config["Jwt:ExpiresInMinutes"])),
-                signingCredentials: creds
-            );
-
-            return new JwtSecurityTokenHandler().WriteToken(token);
-        }
+       
     }
 }

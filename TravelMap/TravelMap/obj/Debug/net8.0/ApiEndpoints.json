@@ -1,25 +1,5 @@
 [
   {
-    "ContainingType": "TravelMap.Controllers.TestController",
-    "Method": "GetProtected",
-    "RelativePath": "api/Test/protected",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "TravelMap.Controllers.TestController",
-    "Method": "GetPublic",
-    "RelativePath": "api/Test/public",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "TravelMap.Controllers.TravelPostsController",
     "Method": "CreateTravelPost",
     "RelativePath": "api/TravelPosts",
@@ -27,11 +7,6 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [
-      {
-        "Name": "Title",
-        "Type": "System.String",
-        "IsRequired": false
-      },
       {
         "Name": "Content",
         "Type": "System.String",
@@ -84,12 +59,22 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "dto",
+        "Name": "request",
         "Type": "TravelMap.DTO.LoginDto",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "TravelMap.DTO.ApiResponseDto\u00601[[TravelMap.DTO.LoginResponseDto, TravelMap, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "TravelMap.Controllers.UserController",
@@ -100,11 +85,21 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "dto",
+        "Name": "request",
         "Type": "TravelMap.DTO.RegisterDto",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "TravelMap.DTO.ApiResponseDto\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]

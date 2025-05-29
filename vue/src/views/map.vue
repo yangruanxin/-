@@ -207,24 +207,24 @@ const submit = async () => {
   }
 
   const formData = new FormData();
-  console.log("locationInfo.value",locationInfo.value)
-  formData.append("locationName", locationInfo.value.name);
-  formData.append("longitude", locationInfo.value.lng);
-  formData.append("latitude", locationInfo.value.lat);
-  formData.append("content", description.value);
-  formData.append("beginTime", formatDateTime(travelStart.value));
-  formData.append("endTime", formatDateTime(travelEnd.value));
+  console.log("LocationInfo.value",locationInfo.value)
+  formData.append("LocationName", locationInfo.value.name);
+  formData.append("Longitude", locationInfo.value.lng);
+  formData.append("Latitude", locationInfo.value.lat);
+  formData.append("Content", description.value);
+  formData.append("BeginTime", formatDateTime(travelStart.value));
+  formData.append("EndTime", formatDateTime(travelEnd.value));
 
   if (uploadImage.value && uploadImage.value.length > 0) {
     uploadImage.value.forEach((file,index) => {
-      formData.append("images", file);
-      formData.append("orders", index); 
+      formData.append("Images", file);
+      formData.append("Orders", index.toString()); 
       console.log(index)
     });
   }
 
   try {
-    const response = await authAxios.post("/travel-posts", formData, {
+    const response = await authAxios.post("/TravelPosts", formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }
