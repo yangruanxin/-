@@ -5,6 +5,8 @@ using System.Text;
 using TravelMap.Data;
 using TravelMap.Services.Interfaces;
 using TravelMap.Services;
+using Microsoft.AspNetCore.Identity;
+using TravelMap.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,8 +40,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     });
 
 builder.Services.AddScoped<ITravelPostService, TravelPostService>();
+builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
 
-builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddHttpContextAccessor();
@@ -52,14 +54,20 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+app.UseHttpsRedirection(); 
+
+app.UseRouting(); 
+
+// 启用静态文件服务，用于服务 wwwroot 下的 index.html, JS, CSS 等
+app.UseStaticFiles();
 
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
 
-app.UseStaticFiles();
+app.MapFallbackToFile("index.html");
+
 
 // 初始化数据库
 using (var scope = app.Services.CreateScope())

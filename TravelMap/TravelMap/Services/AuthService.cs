@@ -1,27 +1,39 @@
-﻿using System.IdentityModel.Tokens.Jwt;
+﻿//using System.Data.Entity;
+using System.Configuration;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using MySqlConnector;
 using TravelMap.Data;
 using TravelMap.Models;
 using TravelMap.Services.Interfaces;
+using TravelMap.DTO;
 
 namespace TravelMap.Services
 {
-    public class AuthService:IAuthService
+    public class AuthService : IAuthService
     {
-        private readonly AppDbContext _context;
-        private readonly IConfiguration _configuration;
+        //私有字段声明
+        private readonly AppDbContext _context;//数据库上下文
+        private readonly IConfiguration _config;//配置接口
+        
 
-        public AuthService(AppDbContext context, IConfiguration configuration)
+        //构造函数
+        public AuthService(AppDbContext context, IConfiguration config)
         {
             _context = context;
-            _configuration = configuration;
+            _config = config;
+            
         }
 
+        //注册用户
         public async Task<(bool success, string message)> Register(string username, string password)
         {
+
             if (await _context.Users.AnyAsync(u => u.Username == username))
                 return (false, "用户名已存在");
 
@@ -30,6 +42,7 @@ namespace TravelMap.Services
             return (true, "注册成功");
         }
 
+        //登录用户
         public async Task<(bool success, string token)> Login(string username, string password)
         {
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
@@ -49,21 +62,22 @@ namespace TravelMap.Services
             return (true, token);
         }
 
+        //生成token
         private string GenerateJwtToken(User user)
         {
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             var claims = new[]
             {
-                new Claim(JwtRegisteredClaimNames.Sub, user.Username),
+                new Claim(JwtRegisteredClaimNames.Sub,user.Id.ToString()),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
+                new Claim(ClaimTypes.NameIdentifier,user.Id.ToString() )
             };
 
             var token = new JwtSecurityToken(
-                issuer: _configuration["Jwt:Issuer"],
-                audience: _configuration["Jwt:Audience"],
+                issuer: _config["Jwt:Issuer"],
+                audience: _config["Jwt:Audience"],
                 claims: claims,
                 expires: DateTime.Now.AddHours(3),
                 signingCredentials: credentials);
@@ -71,14 +85,62 @@ namespace TravelMap.Services
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        public int? GetUserIdFromToken(ClaimsPrincipal user)
+        //从token中获得id
+        public int GetUserIdFromToken(ClaimsPrincipal user)
         {
-            var userIdClaim = user.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            if (int.TryParse(userIdClaim, out int userId))
+            var Id = user.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (int.TryParse(Id, out int userId))
             {
                 return userId;
             }
+            return 0;
+        }
+
+        //从id获得用户信息
+        public async Task<User> GetUserByIdAsync(int Id)
+        {
+            using var connection = new MySqlConnection(_config.GetConnectionString("DefaultConnection"));
+            await connection.OpenAsync();
+
+            string userQuery = @"SELECT Id, Username FROM Users WHERE Id = @Id";
+
+            using var command = new MySqlCommand(userQuery, connection);
+            command.Parameters.AddWithValue("@Id", Id);
+
+            using var reader = await command.ExecuteReaderAsync();
+            if (await reader.ReadAsync())
+            {
+                return new User
+                {
+                    Id = reader.GetInt32("Id"),
+                    Username = reader.GetString("Username"),
+                };
+            }
+
             return null;
         }
+
+        //注销用户
+        public async Task<bool> DeleteUserAsync(int Id)
+        {
+            // 查找用户
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == Id);
+
+            // 如果用户不存在，返回 false
+            if (user == null)
+            {
+                return false;
+            }
+
+            // 从数据库中移除用户
+            _context.Users.Remove(user);
+
+            // 保存更改到数据库
+            var changes = await _context.SaveChangesAsync();
+
+            // 如果有更改，表示删除成功
+            return changes > 0;
+        }
+        
     }
 }

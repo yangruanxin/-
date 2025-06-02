@@ -2,7 +2,7 @@
   {
     "ContainingType": "TravelMap.Controllers.TravelPostsController",
     "Method": "CreateTravelPost",
-    "RelativePath": "api/TravelPosts",
+    "RelativePath": "api/travel-posts",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -38,7 +38,7 @@
         "IsRequired": false
       },
       {
-        "Name": "Images",
+        "Name": "ImageUrls",
         "Type": "System.Collections.Generic.List\u00601[[Microsoft.AspNetCore.Http.IFormFile, Microsoft.AspNetCore.Http.Features, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
         "IsRequired": false
       },
@@ -51,9 +51,61 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "TravelMap.Controllers.TravelPostsController",
+    "Method": "DeleteTravelPost",
+    "RelativePath": "api/travel-posts/{postId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "postId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TravelMap.Controllers.TravelPostsController",
+    "Method": "GetMyTravelPosts",
+    "RelativePath": "api/travel-posts/me",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TravelMap.Controllers.UserController",
+    "Method": "DeleteUser",
+    "RelativePath": "api/user",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TravelMap.Controllers.UserController",
+    "Method": "UpdateUserInfo",
+    "RelativePath": "api/user/info",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "TravelMap.DTO.UpdateUserInfoRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "TravelMap.Controllers.UserController",
     "Method": "Login",
-    "RelativePath": "api/User/login",
+    "RelativePath": "api/user/login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -78,8 +130,28 @@
   },
   {
     "ContainingType": "TravelMap.Controllers.UserController",
+    "Method": "Logout",
+    "RelativePath": "api/user/logout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TravelMap.Controllers.UserController",
+    "Method": "GetMyUser",
+    "RelativePath": "api/user/me",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TravelMap.Controllers.UserController",
     "Method": "Register",
-    "RelativePath": "api/User/register",
+    "RelativePath": "api/user/register",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

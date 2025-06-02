@@ -26,7 +26,7 @@ namespace TravelMap.DTO
         public string EndTime { get; set; }
 
         [Required]
-        public List<IFormFile> Images { get; set; }
+        public List<IFormFile> ImageUrls { get; set; }
 
         [Required]
         public List<string> Orders { get; set; }

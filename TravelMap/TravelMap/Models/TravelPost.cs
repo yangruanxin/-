@@ -10,9 +10,11 @@
         public double Longitude { get; set; }
         public DateTime BeginTime { get; set; }
         public DateTime EndTime { get; set; }
-        public List<string> ImageUrls { get; set; } = new List<string>();
+        public List<TravelImage> ImageUrls { get; set; } = new List<TravelImage>();
         public int UserId { get; set; }
         public DateTime CreatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
+
     }
 
 }

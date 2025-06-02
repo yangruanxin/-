@@ -3,14 +3,14 @@
     "",
     "\\TravelMap",
     "\\TravelMap\\TravelMap",
-    "\\TravelMap\\TravelMap\\Data",
     "\\TravelMap\\TravelMap\\Models",
+    "\\TravelMap\\TravelMap\\Services",
+    "\\TravelMap\\TravelMap\\Services\\Interfaces",
     "\\vue",
     "\\vue\\src",
-    "\\vue\\src\\utils",
     "\\vue\\src\\views",
     "\\vue\\src\\views\\Auth"
   ],
-  "SelectedNode": "\\TravelMap\\TravelMap\\Models\\TravelPost.cs",
+  "SelectedNode": "\\vue\\src\\views\\Auth\\Profile.vue",
   "PreviewInSolutionExplorer": false
 }

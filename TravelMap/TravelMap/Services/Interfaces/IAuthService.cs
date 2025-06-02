@@ -1,5 +1,7 @@
-﻿using System.Security.Claims;
+﻿using Microsoft.AspNetCore.Http;
+using System.Security.Claims;
 using TravelMap.Models;
+using TravelMap.DTO;
 
 namespace TravelMap.Services.Interfaces
 {
@@ -7,7 +9,9 @@ namespace TravelMap.Services.Interfaces
     {
         Task<(bool success, string message)> Register(string username, string password);
         Task<(bool success, string token)> Login(string username, string password);
-
-        int? GetUserIdFromToken(ClaimsPrincipal user);
+        int GetUserIdFromToken(ClaimsPrincipal user);
+        Task<User> GetUserByIdAsync(int Id);
+        Task<bool> DeleteUserAsync(int Id);
+        
     }
 }

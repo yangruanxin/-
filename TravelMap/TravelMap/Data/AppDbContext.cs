@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Text.Json;
 using TravelMap.Models;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace TravelMap.Data
 {
@@ -11,17 +12,28 @@ namespace TravelMap.Data
         // 数据库表映射到类
         public DbSet<User> Users { get; set; }
         public DbSet<TravelPost> TravelPosts { get; set; }
+        public DbSet<TravelImage> TravelImages { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //指定实体类 User 映射到数据库中的表名为 "Users"
+            base.OnModelCreating(modelBuilder);
+            //指定实体类 User 映射到数据库中的表名
             modelBuilder.Entity<User>().ToTable("Users");
 
-            // 配置TravelPost实体将ImageUrls存储为JSON
-            modelBuilder.Entity<TravelPost>()
-                .Property(e => e.ImageUrls)
-                .HasConversion(
-                    v => JsonSerializer.Serialize(v, (JsonSerializerOptions)null),
-                    v => JsonSerializer.Deserialize<List<string>>(v, (JsonSerializerOptions)null));
+            modelBuilder.Entity<TravelPost>().ToTable("travelposts");
+
+            modelBuilder.Entity<TravelImage>()
+        .HasOne(img => img.TravelPost)
+        .WithMany(post => post.ImageUrls)
+        .HasForeignKey(img => img.TravelPostId)
+        .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<User>()
+                .HasIndex(u => u.Username)
+                .IsUnique();
+
+            
+
+            
         }
     }
 }

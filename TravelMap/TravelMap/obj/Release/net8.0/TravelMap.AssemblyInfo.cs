@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TravelMap")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+215189bf5a0f207e5bac7c27ab5d150e8bc150fa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e73e6c26d35fac4ff7ea357a34ead7a7d71a111c")]
 [assembly: System.Reflection.AssemblyProductAttribute("TravelMap")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TravelMap")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

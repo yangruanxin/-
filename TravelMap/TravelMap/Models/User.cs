@@ -11,5 +11,7 @@ namespace TravelMap.Models {
 
         [Required]
         public string Password { get; set; }
+
+        public DateTime UpdatedTime { get; set; } = DateTime.UtcNow;
     }
 }
