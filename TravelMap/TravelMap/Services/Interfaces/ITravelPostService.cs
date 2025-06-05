@@ -7,8 +7,8 @@ namespace TravelMap.Services.Interfaces
     {
         Task<TravelPostResponseDto> CreateTravelPost(TravelPostRequest request, int userId);
         Task<List<TravelPost>> GetTravelPostsByUserIdAsync(int userId);
-        Task<TravelPost?> GetPostByIdAsync(int postId);
-        Task<bool> DeletePostByIdAsync(int postId);
+        Task<TravelPost?> GetTravelPostByTravelPostIdAsync(int TravelPostId);
+        Task<bool> DeleteTravelPostByTravelPostIdAsync(int TravelPostId);
 
     }
 }

@@ -151,6 +151,10 @@ namespace TravelMap.Services
             {
                 await connection.OpenAsync();
 
+                // 获取基础URL（协议+主机）
+                var request = _httpContextAccessor.HttpContext.Request;
+                var baseUrl = $"{request.Scheme}://{request.Host}";
+
                 //查询 travelposts
                 string postQuery = @"SELECT Id, Content, LocationName, Latitude, Longitude, 
                                     BeginTime, EndTime, UserId, CreatedAt, UpdatedAt 
@@ -191,19 +195,19 @@ namespace TravelMap.Services
                 string imageQuery = @"SELECT Id, Url, `Order`, TravelPostId
                       FROM travelimages 
                       WHERE TravelPostId IN (" + string.Join(",", postDict.Keys) + ")";
-                /*string imageQuery = @"SELECT Id, PostId, ImageUrl 
-                              FROM travelimages 
-                              WHERE PostId IN (" + string.Join(",", postDict.Keys) + ")";*/
 
                 using (var imageCommand = new MySqlCommand(imageQuery, connection))
                 using (var imageReader = await imageCommand.ExecuteReaderAsync())
                 {
                     while (await imageReader.ReadAsync())
                     {
+                        var relativeUrl = imageReader.GetString("Url");
+                        // 不拼接 baseUrl，直接返回相对路径
+                        var relativePath = relativeUrl.StartsWith("/") ? relativeUrl : "/" + relativeUrl;
                         var image = new TravelImage
                         {
                             Id = imageReader.GetInt32("Id"),
-                            Url = imageReader.GetString("Url"),
+                            Url = relativePath, // 只传相对路径
                             Order = imageReader.GetInt32("Order"),
                             TravelPostId = imageReader.GetInt32("TravelPostId")
                             
@@ -220,8 +224,8 @@ namespace TravelMap.Services
             return posts;
         }
 
-        //从postId获得post
-        public async Task<TravelPost?> GetPostByIdAsync(int postId)
+        //从travelpostId获得post
+        public async Task<TravelPost?> GetTravelPostByTravelPostIdAsync(int TravelPostId)
         {
             TravelPost? post = null;
 
@@ -230,13 +234,13 @@ namespace TravelMap.Services
 
             // 查询 travelposts
             string postQuery = @"SELECT Id, Content, LocationName, Latitude, Longitude, 
-                                BeginTime, EndTime, UserId, CreatedAt, UpdatedAt 
+                                BeginTime, EndTime, CreatedAt, UpdatedAt, UserId
                          FROM travelposts 
                          WHERE Id = @Id";
 
             using (var postCommand = new MySqlCommand(postQuery, connection))
             {
-                postCommand.Parameters.AddWithValue("@Id", postId);
+                postCommand.Parameters.AddWithValue("@Id", TravelPostId);
 
                 using var reader = await postCommand.ExecuteReaderAsync();
                 if (await reader.ReadAsync())
@@ -262,18 +266,14 @@ namespace TravelMap.Services
                 return null;
 
             // 查询 travelimages
-            string imageQuery = @"SELECT Id, TravelPostId, Url, `Order`
+            string imageQuery = @"SELECT Id, `Order`, Url, TravelPostId
                       FROM travelimages 
-                      WHERE TravelPostId = @PostId 
+                      WHERE TravelPostId = @TravelPostId
                       ORDER BY `Order` ASC";
-            /*string imageQuery = @"SELECT Id, TravelPostId, Url, `Order`
-                          FROM travelimages 
-                          WHERE TravelPostId = @PostId 
-                          ORDER BY `Order` ASC";*/
-
+     
             using (var imageCommand = new MySqlCommand(imageQuery, connection))
             {
-                imageCommand.Parameters.AddWithValue("@PostId", postId);
+                imageCommand.Parameters.AddWithValue("@TravelPostId", TravelPostId);
 
                 using var imgReader = await imageCommand.ExecuteReaderAsync();
                 while (await imgReader.ReadAsync())
@@ -281,32 +281,28 @@ namespace TravelMap.Services
                     var image = new TravelImage
                     {
                         Id = imgReader.GetInt32("Id"),
-                        TravelPostId = imgReader.GetInt32("TravelPostId"),
                         Url = imgReader.GetString("Url"),
-                        Order = imgReader.GetInt32("Order")
+                        Order = imgReader.GetInt32("Order"),
+                        TravelPostId = imgReader.GetInt32("TravelPostId"),
                     };
                     post.ImageUrls.Add(image); 
                 }
             }
-
-
             return post;
         }
 
-
-        public async Task<bool> DeletePostByIdAsync(int postId)
+        //通过TravelPostId删除post
+        public async Task<bool> DeleteTravelPostByTravelPostIdAsync(int TravelPostId)
         {
             using var connection = new MySqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             await connection.OpenAsync();
 
             string sql = "DELETE FROM travelposts WHERE Id = @Id";
             using var cmd = new MySqlCommand(sql, connection);
-            cmd.Parameters.AddWithValue("@Id", postId);
+            cmd.Parameters.AddWithValue("@Id", TravelPostId);
 
             var result = await cmd.ExecuteNonQueryAsync();
             return result > 0;
         }
-
-
     }
 }

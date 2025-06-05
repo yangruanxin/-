@@ -128,7 +128,13 @@ namespace TravelMap.Controllers
                 {
                     Code = 0,
                     Message = "Success",
-                    Data = user
+                    Data = new User
+                    {
+                        Id = user.Id,
+                        Username = user.Username,
+                        Password = user.Password,
+                        UpdatedTime = user.UpdatedTime
+                    }
                 });
             }
             catch (Exception ex)
@@ -156,16 +162,10 @@ namespace TravelMap.Controllers
             bool hasPasswordUpdated = false;
             string? newUsername = null;
 
-            // 如果修改密码，必须校验原密码
+            // 修改密码
             if (!string.IsNullOrEmpty(request.Password))
             {
-                if (string.IsNullOrEmpty(request.OriginPassword) ||
-                    _passwordHasher.VerifyHashedPassword(user, user.Password, request.OriginPassword) == PasswordVerificationResult.Failed)
-                {
-                    return BadRequest(new { code = 400, message = "原始密码错误" });
-                }
-
-                user.Password = _passwordHasher.HashPassword(user, request.Password);
+                user.Password = BCrypt.Net.BCrypt.HashPassword(request.Password);
                 hasPasswordUpdated = true;
             }
 
@@ -196,6 +196,7 @@ namespace TravelMap.Controllers
                 }
             });
         }
+
 
         //退出登录
         [HttpPost("logout")]

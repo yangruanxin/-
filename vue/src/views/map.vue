@@ -59,6 +59,7 @@ import FileSubmit from "@/components/FileSubmit.vue";
 import {useRouter} from "vue-router";
 import { ref,onMounted } from "vue";
 import { authAxios } from '@/utils/request'
+import { useAuthStore } from '@/stores/auth'
 
 const router=useRouter();
 
@@ -125,9 +126,17 @@ const initMap = (BMapGL) => {
   map.addEventListener("click", (e) => {
     console.log("点击了地图", e.point);
     const lng = e.latlng.lng;
-    const lat = e.latlng.lat;
+      const lat = e.latlng.lat;
+      const authStore = useAuthStore()
+      console.log('当前 token:', authStore.token)
 
-    fetch(`https://121.43.136.251:8080/api/map/reverse-geocode?lat=${lat}&lng=${lng}`)
+      fetch(`https://121.43.136.251:8080/api/map/reverse-geocode?lat=${lat}&lng=${lng}`, {
+          method: 'GET',
+          headers: {
+              'Authorization': `Bearer ${authStore.token}`,
+              'Content-Type': 'application/json'
+          }
+      })
       .then(res => res.text())
       .then(text => {
         console.log("API响应文本：", text);
@@ -217,14 +226,14 @@ const submit = async () => {
 
   if (uploadImage.value && uploadImage.value.length > 0) {
     uploadImage.value.forEach((file,index) => {
-      formData.append("Images", file);
+      formData.append("ImageUrls", file);
       formData.append("Orders", index.toString()); 
       console.log(index)
     });
   }
 
   try {
-    const response = await authAxios.post("/TravelPosts", formData, {
+    const response = await authAxios.post("/travel-posts", formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }

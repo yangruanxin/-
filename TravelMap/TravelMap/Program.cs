@@ -7,6 +7,7 @@ using TravelMap.Services.Interfaces;
 using TravelMap.Services;
 using Microsoft.AspNetCore.Identity;
 using TravelMap.Models;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -56,10 +57,23 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection(); 
 
-app.UseRouting(); 
+app.UseRouting();
 
 // 启用静态文件服务，用于服务 wwwroot 下的 index.html, JS, CSS 等
-app.UseStaticFiles();
+// 定义上传文件夹路径（放在 Program.cs 或 Startup.cs 里，UseStaticFiles 之前）
+var uploadsFolderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
+
+// 如果不存在就创建文件夹
+if (!Directory.Exists(uploadsFolderPath))
+{
+    Directory.CreateDirectory(uploadsFolderPath);
+}
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(uploadsFolderPath),
+    RequestPath = "/uploads" // 浏览器访问路径
+});
 
 app.UseAuthentication();
 app.UseAuthorization();

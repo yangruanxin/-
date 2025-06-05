@@ -102,7 +102,9 @@ namespace TravelMap.Services
             using var connection = new MySqlConnection(_config.GetConnectionString("DefaultConnection"));
             await connection.OpenAsync();
 
-            string userQuery = @"SELECT Id, Username FROM Users WHERE Id = @Id";
+            string userQuery = @"SELECT Id, Username, Password
+                                FROM Users 
+                                WHERE Id = @Id";
 
             using var command = new MySqlCommand(userQuery, connection);
             command.Parameters.AddWithValue("@Id", Id);
@@ -114,6 +116,7 @@ namespace TravelMap.Services
                 {
                     Id = reader.GetInt32("Id"),
                     Username = reader.GetString("Username"),
+                    Password = reader.GetString("Password")
                 };
             }
 

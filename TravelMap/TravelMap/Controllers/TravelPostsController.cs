@@ -9,6 +9,8 @@ using TravelMap.Services.Interfaces;
 using System.Security.Claims;
 using System.Text.RegularExpressions;
 using Microsoft.Extensions.Logging;
+using System.Text.Json;
+
 
 
 namespace TravelMap.Controllers
@@ -19,13 +21,15 @@ namespace TravelMap.Controllers
     public class TravelPostsController : ControllerBase
     {
         //私有字段声明
+        private readonly AppDbContext _context;//数据库上下文
         private readonly ITravelPostService _travelPostService;//旅游记录服务接口
         private readonly IAuthService _authService;//用户服务接口
         private readonly ILogger<UserController> _logger;//日志记录
 
         //构造函数
-        public TravelPostsController(ITravelPostService travelPostService, IAuthService authService, ILogger<UserController> logger)
+        public TravelPostsController(AppDbContext context, ITravelPostService travelPostService, IAuthService authService, ILogger<UserController> logger)
         {
+            _context = context;
             _travelPostService = travelPostService;
             _authService = authService;
             _logger = logger;
@@ -122,14 +126,14 @@ namespace TravelMap.Controllers
                 }
 
                 // 检查该记录是否属于当前用户
-                var post = await _travelPostService.GetPostByIdAsync(postId);
+                var post = await _travelPostService.GetTravelPostByTravelPostIdAsync(postId);
                 if (post == null || post.UserId != Id)
                 {
                     return Forbid("您无权删除此记录。");
                 }
 
                 // 执行删除
-                var success = await _travelPostService.DeletePostByIdAsync(postId);
+                var success = await _travelPostService.DeleteTravelPostByTravelPostIdAsync(postId);
                 if (!success)
                 {
                     return StatusCode(500, ApiResponseDto<string>.Error("删除失败", 500));
@@ -143,6 +147,99 @@ namespace TravelMap.Controllers
                 return StatusCode(500, ApiResponseDto<string>.Error("服务器错误", 500));
             }
         }
+
+        //修改旅游记录
+        //修改记录文本部分
+        [HttpPatch("{postId}/text")]
+        public async Task<IActionResult> UpdateTravelPostText(int postId, [FromBody] TravelPostTextUpdateDto dto)
+        {
+            var post = await _context.TravelPosts.FindAsync(postId);
+            if (post == null) return NotFound();
+
+            post.Content = dto.Content;
+            post.LocationName = dto.LocationName;
+            post.BeginTime = dto.BeginTime;
+            post.EndTime = dto.EndTime;
+            post.UpdatedAt = DateTime.UtcNow;
+
+            await _context.SaveChangesAsync();
+            return Ok(post);
+        }
+
+
+        //修改图片
+        //上传图片
+        [HttpPost("{postId}/images")]
+        public async Task<IActionResult> UploadImage(int postId, [FromForm] IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+                return BadRequest("未选择任何文件");
+
+            // 处理单文件保存逻辑（和你之前写的类似）
+
+            var fileName = $"{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
+            var savePath = Path.Combine("wwwroot/uploads", fileName);
+            var relativeUrl = $"/uploads/{fileName}";
+
+            using (var stream = new FileStream(savePath, FileMode.Create))
+            {
+                await file.CopyToAsync(stream);
+            }
+
+            var image = new TravelImage
+            {
+                Url = relativeUrl,
+                TravelPostId = postId,
+                Order = 0
+            };
+
+            _context.TravelImages.Add(image);
+            await _context.SaveChangesAsync();
+
+            return Ok(new { id = image.Id, url = image.Url });
+        }
+
+
+
+        //删除图片
+        [HttpDelete("images/{imageId}")]
+        public async Task<IActionResult> DeleteImage(int imageId)
+        {
+            var image = await _context.TravelImages.FindAsync(imageId);
+            if (image == null) return NotFound();
+
+            // 可选：删除服务器上的文件
+            var filePath = Path.Combine("wwwroot", image.Url.TrimStart('/'));
+            if (System.IO.File.Exists(filePath))
+            {
+                System.IO.File.Delete(filePath);
+            }
+
+            _context.TravelImages.Remove(image);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+        //更新排序
+        [HttpPatch("{postId}/images/order")]
+        public async Task<IActionResult> UpdateImageOrder(int postId, [FromBody] List<ImageOrderDto> images)
+        {
+            foreach (var img in images)
+            {
+                var image = await _context.TravelImages.FindAsync(img.Id);
+                if (image != null && image.TravelPostId == postId)
+                {
+                    image.Order = img.Order;
+                }
+            }
+
+            await _context.SaveChangesAsync();
+            return NoContent();
+        }
+
+        
+
 
     }
 }
